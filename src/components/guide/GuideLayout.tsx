@@ -13,13 +13,13 @@ export const GuideLayout = ({ data }: GuideLayoutProps) => {
     <div className="min-h-screen bg-gradient-soft">
       <Navigation />
       
-      <main className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 py-8 md:py-12">
         {/* Hero Section */}
-        <div className="mb-12 animate-fade-in">
-          <h1 className={`text-5xl font-bold mb-4 ${data.gradient} bg-clip-text text-transparent`}>
+        <div className="mb-8 md:mb-12 animate-fade-in">
+          <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 ${data.gradient} bg-clip-text text-transparent font-display`}>
             {data.title}
           </h1>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-base md:text-xl text-muted-foreground">
             {data.subtitle}
           </p>
         </div>

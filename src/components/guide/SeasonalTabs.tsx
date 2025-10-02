@@ -11,17 +11,17 @@ interface SeasonalTabsProps {
 export const SeasonalTabs = ({ seasons }: SeasonalTabsProps) => {
   return (
     <Tabs defaultValue={seasons[0]?.id} className="mb-12">
-      <TabsList className="grid w-full grid-cols-4 mb-8 bg-card shadow-soft">
+      <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 mb-6 md:mb-8 bg-card shadow-soft h-auto">
         {seasons.map((season) => {
           const Icon = season.icon;
           return (
             <TabsTrigger
               key={season.id}
               value={season.id}
-              className={`data-[state=active]:${season.gradient} data-[state=active]:text-primary-foreground`}
+              className={`data-[state=active]:${season.gradient} data-[state=active]:text-primary-foreground py-3 text-sm md:text-base`}
             >
-              <Icon className="mr-2" />
-              {season.name}
+              <Icon className="mr-1 md:mr-2" size={18} />
+              <span className="hidden xs:inline">{season.name}</span>
             </TabsTrigger>
           );
         })}

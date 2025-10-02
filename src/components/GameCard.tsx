@@ -12,23 +12,23 @@ interface GameCardProps {
 
 export const GameCard = ({ title, description, image, link }: GameCardProps) => {
   return (
-    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-glow animate-fade-in border-2">
+    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-glow animate-fade-in border-2 hover:scale-[1.02]">
       <CardHeader className="p-0">
         <div className="overflow-hidden">
           <img
             src={image}
             alt={title}
-            className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-40 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
           />
         </div>
       </CardHeader>
-      <CardContent className="p-6">
-        <CardTitle className="mb-2 text-2xl">{title}</CardTitle>
-        <CardDescription className="mb-4 text-base">{description}</CardDescription>
+      <CardContent className="p-4 md:p-6">
+        <CardTitle className="mb-2 text-xl md:text-2xl font-display">{title}</CardTitle>
+        <CardDescription className="mb-4 text-sm md:text-base leading-relaxed">{description}</CardDescription>
         <Link to={link}>
-          <Button variant="cozy" className="w-full group">
+          <Button variant="cozy" className="w-full group text-sm md:text-base">
             View Guides
-            <ArrowRight className="transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="transition-transform group-hover:translate-x-1" size={18} />
           </Button>
         </Link>
       </CardContent>
