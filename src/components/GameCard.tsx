@@ -12,23 +12,24 @@ interface GameCardProps {
 
 export const GameCard = ({ title, description, image, link }: GameCardProps) => {
   return (
-    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-glow animate-fade-in border-2 hover:scale-[1.02]">
+    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-glow animate-fade-in border border-border/50 hover:border-primary/30 hover:-translate-y-1">
       <CardHeader className="p-0">
-        <div className="overflow-hidden">
+        <div className="overflow-hidden relative">
           <img
             src={image}
             alt={title}
-            className="w-full h-40 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-44 sm:h-52 md:h-56 object-cover transition-transform duration-700 group-hover:scale-110"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
       </CardHeader>
-      <CardContent className="p-4 md:p-6">
-        <CardTitle className="mb-2 text-xl md:text-2xl font-display">{title}</CardTitle>
-        <CardDescription className="mb-4 text-sm md:text-base leading-relaxed">{description}</CardDescription>
+      <CardContent className="p-5 sm:p-6">
+        <CardTitle className="mb-2 sm:mb-3 text-lg sm:text-xl md:text-2xl font-display">{title}</CardTitle>
+        <CardDescription className="mb-4 sm:mb-5 text-xs sm:text-sm md:text-base leading-relaxed">{description}</CardDescription>
         <Link to={link}>
-          <Button variant="cozy" className="w-full group text-sm md:text-base">
+          <Button className="w-full group/btn text-xs sm:text-sm shadow-medium">
             View Guides
-            <ArrowRight className="transition-transform group-hover:translate-x-1" size={18} />
+            <ArrowRight className="transition-transform group-hover/btn:translate-x-1" size={16} />
           </Button>
         </Link>
       </CardContent>
